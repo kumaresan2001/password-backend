@@ -59,7 +59,7 @@ app.post("/forgotpassword", async function (req, res) {
         subject: "Reset Password - BrandFP",
         html: `<h4>Hello,</h4><p>We've received a request to reset the password for the AdminFP 
             account. You can reset the password by clicking the link below.
-          <a href=${process.env.FRONTEND_URL}/${randomString}>click to reset your password</a></p>`,
+          <a href=${process.env.SECRET_KEY}/${randomString}>click to reset your password</a></p>`,
       };
       //Send mail
       transporter.sendMail(mailOptions, async (err, data) => {
